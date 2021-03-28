@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap');
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: white;
+	font-family: sans-serif;
+	color: black;
+}
+
+#content {
+	margin: 0 0 0;
+	color:white;
+}
+
+header{
+ width: 100%;
+ background-image: url(image/top_fon.png);
+ height: 313px;
+}
+
+.title {
+	font-size: 67px;
+	padding-top: 63px;
+	text-align: center;
+	color: white;
+	font-family: 'Saira', sans-serif;
+	letter-spacing: 28px;
+	margin: none;
+}
+.desc {
+	font-size: 39px;
+	text-align: center;
+	color: white;
+	font-family: 'Saira', sans-serif;
+	letter-spacing: 7px;
+	font-weight: bold;
+	margin: none;
+}
+
+
+.menu {
+	background: #1C8ECE;
+	padding-top: 1px;
+	padding-bottom: 10px;
+	width: 100%;
+	transition: top 0.3s; /* Transition effect when sliding down (and up) */
+	text-decoration: none;
+	text-align: center;
+	font-family: 'Saira', sans-serif;
+	font-size: 34px;
+	color: white;
+}
+
+a {
+	background: none;
+	direction: none;
+}
+
+.pod_menu {
+	background: #296D94;
+	height: 6px;
+}
+
+.footer {
+	background-color: black;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: white;
+  width: 0%;
+}
+
+.menu button {
+	border: none;
+	outline: none;
+	text-align: center;
+	font-family: 'Saira', sans-serif;
+	background: none;
+	font-size: 34px;
+	color: white;
+}
+
+.pod_menu_active:before {
+	background: #296D94;
+	height: 6px;
+}
+
+.menu_active:before {
+}
+
+.pod_menu_active:after {
+	height: 36px;
+}
+
+.menu_active:after {
+	height: 100px;
+}
+
+.perehod-verh {
+	width: 100%;
+	padding-bottom: 80px;
+}
+
+/*аккордионы*/
+dd {
+	padding-bottom: 6px;
+	margin-bottom: 30px;
+}
+
+.heading-primary {
+  font-size:2em;
+  padding-bottom: 14px;
+  text-align:left;
+  color: #9C9C9C;
+  margin-top: 4px;
+}
+.accordion dl,
+.accordion-list {
+   &:after {
+       content: "";
+       display:block;
+       height:1em;
+       width:100%;
+       background-color:black;
+     }
+}
+.accordion dd,
+.accordion__panel {
+   background-color: #E3E3E3;
+   font-size:1em;
+   line-height:1.5em; 
+}
+.accordion p {
+  padding:1em 2em 1em 2em;
+  color:black;
+}
+
+.accordion {
+    position:relative;
+    color:black;
+}
+.container {
+  max-width:1700px;
+  margin-left: 80px;
+  padding:2em 0 2em 0;
+}
+.accordionTitle,
+.accordion__Heading {
+ background-color:#545454; 
+     font-weight:bold;
+     font-family: 'Saira', sans-serif;
+     font-size:1.5em;
+   	 line-height:0.5em;
+          padding:23px;
+          display:block;
+          text-decoration:none;
+          color:#fff;
+          transition:background-color 0.5s ease-in-out;
+  border-bottom:1px solid darken(#38cc70, 5%);
+  &:before {
+   content: "+";
+   float:left; 
+   transition: transform 0.3s ease-in-out;
+  }
+  &:hover {
+    background-color:darken(#38cc70, 10%);
+  }
+}
+.accordionTitleActive, 
+.accordionTitle.is-expanded {
+   background-color:darken(#38cc70, 10%);
+    &:before {
+     
+      transform:rotate(-225deg);
+    }
+}
+.accordionItem {
+    height:auto;
+    overflow:hidden; 
+    
+     max-height:50em;
+    transition:max-height 1s;   
+ 
+    
+    @media screen and (min-width:48em) {
+         max-height:15em;
+        transition:max-height 0.5s
+        
+    }
+    
+   
+}
+ 
+.accordionItem.is-collapsed {
+    max-height:0;
+}
+.no-js .accordionItem.is-collapsed {
+  max-height: auto;
+}
+.animateIn {
+     animation: accordionIn 0.45s normal ease-in-out both 1; 
+}
+.animateOut {
+     animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform:scale(0.9) rotateX(-60deg);
+    transform-origin: 50% 0;
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes accordionOut {
+    0% {
+       opacity: 1;
+       transform:scale(1);
+     }
+     100% {
+          opacity:0;
+           transform:scale(0.9) rotateX(-60deg);
+       }
+}
